@@ -1,0 +1,6 @@
+naam= (input("hallo, wat is uw naam? "))
+leeftijd = int(input(f"goedendag, {naam} wat is uw leeftijd? "))
+leeten= (input(f"en als {leeftijd} jarige,wat eet je het liefst? "))
+drinken = (input(f"en wat drinkt u het liefts bij {leeten}? "))
+print(" ")
+print(f"de {leeftijd} jarige {naam} drinkt het liefst {drinken} bij de {leeten}.")
