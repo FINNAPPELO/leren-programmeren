@@ -8,3 +8,5 @@ elif a<b:
     min=a
     max = b 
     print(f"a is het klijnste getal {min}")
+else:
+    print("a en b zijn de zelfte waarde ")
