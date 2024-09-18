@@ -2,7 +2,7 @@ geel = input('is de kaas geel ?')
 if geel == "ja":
     gaaten = input('zitten er gaaten in de kaas? ')
     if gaaten=='ja':
-        duur = input("is de kaas belachelijk duur? ")
+        duur = input("is de kaas belachelijk duur? ").lower()
         if duur == "ja":
             print("is je kaas emmenthaler ")
         else:
