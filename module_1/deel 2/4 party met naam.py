@@ -6,9 +6,7 @@ chips = True
 start_condition_1 = gastheer and gasten and drank
 start_condition_2 =  gastheer or (gasten and drank and chips )
 start_condition_3 =  gastheer and drank 
-if naam.lower() == 'wilfred bouman' :
-    print('No Party')
-elif naam.lower() == 'finn' or  start_condition_1 or start_condition_2 and start_condition_3:
+if naam.lower() == 'finn' or  start_condition_1 or start_condition_2 and start_condition_3 and not naam.lower()=='wilfred bouman':
     print('Start the Party')
 else:
-    print('No Party')
+    print("no party")
