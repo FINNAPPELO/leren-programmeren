@@ -1,4 +1,4 @@
+def repeat_char_rows_cols(char, rows, cols):
+    return (char*cols + '\n')*rows
 
-def kaas(x): 
-    print("kaas")
-kaas(4)
+print(repeat_char_rows_cols('@', 57556, 5))
