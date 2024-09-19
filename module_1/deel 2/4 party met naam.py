@@ -1,6 +1,6 @@
 naam = input('wat is de gast heer zij/haar naam? ')
 gastheer = False
-gasten = True
+gasten = False
 drank = True
 chips = True
 start_condition_1 = gastheer and gasten and drank
