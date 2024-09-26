@@ -22,14 +22,14 @@ print('Door de twee grote deuren loop je een gang binnen.')
 print('Het ruikt hier muf en vochtig.')
 print('Je ziet een deur voor je.')
 print('')
-time.sleep(1)
+time.sleep(2)
 
 # === [kamer 2] === #
 print('Je stapt door de deur heen en je ziet een standbeeld voor je.')
 print('Het standbeeld heeft een sleutel vast.')
 print('Op zijn borst zit een numpad met de toesten 9 t/m 0.')
-print(f'Daarboven zie je een som staan {som_1} {oparator} {som_2}=?')
-antwoord = int(input('Wat toest je in?'))
+print(f'Daarboven zie je een som staan {som_1} {oparator} {som_2} =?')
+antwoord = int(input('Wat toest je in? '))
 
 if antwoord == result:
     print('Het stadbeeld laat de sleutel vallen en je pakt het op')
@@ -38,24 +38,30 @@ else:
 
 print('Je zie een deur achter het standbeeld.')
 print('')
-time.sleep(1)
+time.sleep(2)
 
 # === [kamer 3] === #
-item = 'schild'
-player_defense += 1
+defence = ["schild","zwaard"]
+defence_item = random.choice(defence)
+
+if defence_item == 'schild':
+    player_defense += 1
+else:
+    player_attack += 2
+
 
 print('Je duwt hem open en stap een hele lange kamer binnen.')
-print(f'In deze kamer staat een tafel met daarop een {item}.')
-print(f'Je pakt het {item} op en houd het bij je.')
+print(f'In deze kamer staat een tafel met daarop een {defence_item}.')
+print(f'Je pakt het {defence_item} op en houd het bij je.')
 print('Op naar de volgende deur.')
 print('')
-time.sleep(1)
+time.sleep(2)
 
 # === [kamer 4] === #
 zombie_attack = 1
 zombie_defense = 0
 zombie_health = 2
-print(f'Dapper met je nieuwe {item} loop je de kamer binnen.')
+print(f'Dapper met je nieuwe {defence_item} loop je de kamer binnen.')
 print('Je loopt tegen een zombie aan.')
 
 zombie_hit_damage = (zombie_attack - player_defense)
@@ -75,7 +81,7 @@ else:
         print('Game over.')
         exit()
 print('')
-time.sleep(1)
+time.sleep(2)
 
 # === [kamer 5] === #
 print('Voorzichtig open je de deur, je wilt niet nog een zombie tegenkomen.')
