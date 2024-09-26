@@ -4,7 +4,7 @@ print(month_discount_brands)
 
 price=1249.0
 expect_content=124.90
-brand=input("Which brand do you want? ")
+brand=input("welk merk wil je? ")
 calculated_content=calc_discount(price, brand, month_discount_brands, 0)
 name= f'TEST'
 test(name, expect_content, calculated_content)
@@ -12,7 +12,7 @@ report()
 
 price=5900.0
 expect_content=590.00
-brand=input("Which brand do you want? ")
+brand=input("welk merk wil je ? ")
 calculated_content=calc_discount(price, brand, month_discount_brands, 0)
 name= f'TEST'
 test(name, expect_content, calculated_content)
