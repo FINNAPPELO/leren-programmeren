@@ -4,6 +4,7 @@ from random import randint
 player_attack = 1
 player_defense = 0
 player_health = 3
+sleutel =0
 operators = ["+","-","*"]
 
 oparator = random.choice(operators)
@@ -33,6 +34,7 @@ antwoord = int(input('Wat toest je in? '))
 
 if antwoord == result:
     print('Het stadbeeld laat de sleutel vallen en je pakt het op')
+    sleutel=1
 else:
     print('Er gebeurt niets....')
 
@@ -58,7 +60,7 @@ print('')
 time.sleep(2)
 
 # === [kamer 4] === #
-zombie_attack = 1
+zombie_attack = randint(-30,7)
 zombie_defense = 0
 zombie_health = 2
 print(f'Dapper met je nieuwe {defence_item} loop je de kamer binnen.')
@@ -73,9 +75,12 @@ else:
     player_hit_damage = (player_attack - zombie_defense)
     player_attack_amount = math.ceil(zombie_health / player_hit_damage)
 
+
     if player_attack_amount < zombie_attack_amount:
         print(f'In {player_attack_amount} rondes versla je de zombie.')
-        print(f'Je health is nu {player_health}.')
+        player_health1=player_health-zombie_hit_damage
+        print(f'Je health is nu {player_health1}.')
+
     else:
         print('Helaas is de zombie te sterk voor je.')
         print('Game over.')
@@ -87,3 +92,14 @@ time.sleep(2)
 print('Voorzichtig open je de deur, je wilt niet nog een zombie tegenkomen.')
 print('Tot je verbazig zie je een schatkist in het midden van de kamer staan.')
 print('Je loopt er naartoe.')
+print(' ')
+if sleutel==1:
+    print('Je pakt de sleutel uit je zak en steekt hem in het slot')
+    print('Je draait de sleutel om en de kist opent zich.')
+    print(' ')
+    print('je wint het spel')
+else:
+    print("je hebt geen sleutel")
+    print('dus je kan de kist niet openen')
+    print('')
+    print('je hebt het spel verlooren ')
