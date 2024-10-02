@@ -133,53 +133,50 @@ while goken_1 ==  "ja":
 print('Je duwt de deur open en stap een hele lange kamer binnen.')
 print(f'In deze kamer staat een merchant met een schild een zwaard en een sleutel.')
 
-ja_nee=input("wil je iets kopen van je ruby's: ")
-ja_nee.lower
-if ruby>= 2:
-    hoeveel=int(input('hoeveel items wil je kopen? 1 , 2 of 3 '))
-    if hoeveel== 3:
-        ruby-=3
-        player_attack +=2
-        player_defense +=1
-        sleutel+=1
-        print(f'je hebt 3 items gekocht en hebt nu {ruby} rubbys')
-        defence_item=("items")
-        print("op naar de volgende deur")
-        print(' ')
-    else :
-        defence_item = input('wat wil je kopen ? schild of zwaard.   een: ')
-        defence_item.lower
+items = [
+    {"name": "schild", "price": 1, "description": "Verhoogt je verdediging met 1"},
+    {"name": "zwaard", "price": 1, "description": "Verhoogt je aanval met 2"},
+    {"name": "sleutel", "price": 1, "description": "Een sleutel om de schatkist te openen"}
+]
 
-        print(f'Je pakt het {defence_item} op en houd het bij je.')
-        print('Op naar de volgende deur.')
-        print('')
+print("De merchant heeft de volgende items te koop:")
+for i, item in enumerate(items):
+    print(f"{i+1}. {item['name']} - {item['price']} rubys - {item['description']}")
 
-        
-        if defence_item == 'schild':
-            player_defense += 1
-        elif defence_item =='zwaard':
-            player_attack += 2
+if ruby >= 1:
+    while True:
+        choice = input("Welk item wil je kopen? (typ het nummer) of typ 'n' om niets te kopen: ")
+        if choice.lower() == 'n':
+            print("Je gaat verder zonder wat te kopen")
+            break
+        try:
+            choice = int(choice)
+            if choice < 1 or choice > len(items):
+                print("Ongeldige keuze, probeer opnieuw")
+            else:
+                item = items[choice-1]
+                if ruby >= item['price']:
+                    ruby -= item['price']
+                    if item['name'] == 'schild':
+                        player_defense += 1
+                    elif item['name'] == 'zwaard':
+                        player_attack += 2
+                    elif item['name'] == 'sleutel':
+                        sleutel += 1
+                    print(f"Je hebt {item['name']} gekocht voor {item['price']} rubys")
+                    print(f"Je hebt nu {ruby} rubys over")
+                else:
+                    print("Je hebt niet genoeg rubys om dit item te kopen")
+        except ValueError:
+            print("Ongeldige keuze, probeer opnieuw")
 else:
-    defence_item = input('wat wil je kopen ? schild of zwaard.   een: ')
-    defence_item.lower
-
-    print(f'Je pakt het {defence_item} op en houd het bij je.')
-    print('Op naar de volgende deur.')
-    print('')
-
-        
-    if defence_item == 'schild':
-        player_defense += 1
-    elif defence_item =='zwaard':
-        player_attack += 2
-    else: 
-        print('je gaat verder zonder wat te kopen ')
+    print("Je hebt niet genoeg rubys om iets te kopen")
 # === [kamer 4] === #
 beast_attack = 2
 beast_defense = 0
 beast_health = 3
 time.sleep(3)
-print(f'Dapper met je nieuwe {defence_item} loop je de kamer binnen.')
+print(f'Dapper met je nieuwe {item} loop je de kamer binnen.')
 print('Je loopt tegen een beast aan.')
 
 beast_hit_damage = (beast_attack - player_defense)
