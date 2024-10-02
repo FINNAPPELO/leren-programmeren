@@ -5,7 +5,7 @@ player_attack = 1
 player_defense = 0
 player_health = 3
 sleutel =0
-ruby = 0
+ruby = 2
 operators = ["+","-","*"]
 
 oparator = random.choice(operators)
@@ -33,7 +33,7 @@ print(' ')
 print ('je wilt de deur openmaken maar dan zie aan de rechterkant nog een deur ')
 kr7=input('welke deur wil je in rechtdoor of naar rechts?  ')
 kr7.lower
-ruby=1
+ruby+=1
 if kr7  == 'rechtdoor':
 
     print(' ')
@@ -90,15 +90,53 @@ if kr7  == 'rechtdoor':
         print('je hebt kamer 2 gekozen ')
 else:
     print('je gaat naar rechts')
+# === [kamer 8] === #
+print(' ')
+print('je komt een lannge kamer binnen  ')
+print('in het miden van de kamer staat een gokkast')
+print('')
+print("de gok kast werkt als volgt er worden 2 dobbelstenen gegooit mat allebij 6 zijden ")
+print('als de dobbelstenen in totaal hooger als 7 zijn dan verdubel jij je rubys ')
+print('aleen als ze laager zijn als 7 dan verlies jij 1 health ')
+print('als die gelijk is aan 7 dan krijg je 1 ruby en 4 health ')
+goken_1= input("wil je gokken ja of nee? ")
+goken_1.lower
+while goken_1 ==  "ja":
+    if  goken_1 == "ja":
+        getal_gokken1 =randint(0,6)
+        getal_gokken2 =randint(0,6) 
+        gokken= getal_gokken1+getal_gokken2
+        if  gokken > 7:
+            print(f'je hebt {gokken} gegooid en hebt je rubys verdubbeld')
+            ruby+=ruby
+            print(f'aantal rubbys  {ruby}')
+        elif  gokken < 7:
+            print(f'je hebt {gokken} gegooid  en hebt 1 health verloren')
+            player_health-=1
+            if player_health==0:
+                print('al je  health is verdwenen je bent af')
+                print('game over')
+                exit()
+            else:
+                print(f'je  health is nu {player_health}')
+
+        else:
+            print(f'je hebt {gokken} gegooid dus je krijgt  1 ruby en 4 health')
+            player_health+=4
+            ruby+=1
+        goken_1=input('wil je nog een keer gokken ja of nee ?  ')
 # === [kamer 3] === #
 
 print('Je duwt de deur open en stap een hele lange kamer binnen.')
 print(f'In deze kamer staat een merchant met een schild en een zwaard.')
-print('de merchant wilt je 1 ding voor je ruby verkopen')
-ja_nee=input('wil je iets komen van je ruby: ')
-ja_nee.lower
-if ja_nee == 'ja':
 
+ja_nee=input('wil je iets kopen van je ruby: ')
+ja_nee.lower
+if ruby>= 2:
+    defence_items=2
+else:
+    defence_items=ruby
+for i in range(defence_items):
     defence_item = input('wat wil je kopen ? schild of zwaard.   een: ')
     defence_item.lower
 
@@ -106,13 +144,13 @@ if ja_nee == 'ja':
     print('Op naar de volgende deur.')
     print('')
 
-    
+        
     if defence_item == 'schild':
         player_defense += 1
     elif defence_item =='zwaard':
         player_attack += 2
-else: 
-    print('je gaat verder zonder wat te kopen ')
+    else: 
+        print('je gaat verder zonder wat te kopen ')
 # === [kamer 4] === #
 beast_attack = 2
 beast_defense = 0
