@@ -5,7 +5,7 @@ player_attack = 1
 player_defense = 0
 player_health = 3
 sleutel =0
-ruby = 2
+ruby = 0
 operators = ["+","-","*"]
 
 oparator = random.choice(operators)
@@ -110,6 +110,7 @@ while goken_1 ==  "ja":
             print(f'je hebt {gokken} gegooid en hebt je rubys verdubbeld')
             ruby+=ruby
             print(f'aantal rubbys  {ruby}')
+            print(' ')
         elif  gokken < 7:
             print(f'je hebt {gokken} gegooid  en hebt 1 health verloren')
             player_health-=1
@@ -119,24 +120,45 @@ while goken_1 ==  "ja":
                 exit()
             else:
                 print(f'je  health is nu {player_health}')
+                print(' ')
 
         else:
             print(f'je hebt {gokken} gegooid dus je krijgt  1 ruby en 4 health')
             player_health+=4
             ruby+=1
+            print(' ')
         goken_1=input('wil je nog een keer gokken ja of nee ?  ')
 # === [kamer 3] === #
 
 print('Je duwt de deur open en stap een hele lange kamer binnen.')
 print(f'In deze kamer staat een merchant met een schild en een zwaard.')
 
-ja_nee=input('wil je iets kopen van je ruby: ')
+ja_nee=input("wil je iets kopen van je ruby's: ")
 ja_nee.lower
 if ruby>= 2:
-    defence_items=2
+    hoeveel=int(input('hoeveel items wil je kopen? 1 of 2  '))
+    if hoeveel== 2:
+        ruby-=2
+        player_attack +=2
+        player_defense +=1
+        print(f'je hebt 2 items gekocht en hebt nu {ruby} rubbys')
+        defence_item=("items")
+        print("op naar de volgende deur")
+        print(' ')
+    else :
+        defence_item = input('wat wil je kopen ? schild of zwaard.   een: ')
+        defence_item.lower
+
+        print(f'Je pakt het {defence_item} op en houd het bij je.')
+        print('Op naar de volgende deur.')
+        print('')
+
+        
+        if defence_item == 'schild':
+            player_defense += 1
+        elif defence_item =='zwaard':
+            player_attack += 2
 else:
-    defence_items=ruby
-for i in range(defence_items):
     defence_item = input('wat wil je kopen ? schild of zwaard.   een: ')
     defence_item.lower
 
