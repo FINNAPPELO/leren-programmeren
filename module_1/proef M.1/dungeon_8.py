@@ -5,6 +5,7 @@ player_attack = 1
 player_defense = 0
 player_health = 3
 sleutelS=0
+k3_k8=8
 ruby = 0
 operators = ["+","-","*"]
 item=0
@@ -58,8 +59,8 @@ if kr7  == 'rechtdoor':
     print('Je ziet twee deuren achter het standbeeld.')
     print('')
     time.sleep(3)
-    nr_kamer=int(input("wil je kamer 2 of kamer 6 in  gaan? type 1 of 6? "))
-    if nr_kamer >= 6:
+    nr_kamer=int(input("wil je kamer 8 of kamer 6 in  gaan? type 8 of 6? "))
+    if nr_kamer == 6:
         print('je hebt kamer 6 gekozen ')
         time.sleep(3)
         # === [kamer 6] === #
@@ -72,6 +73,7 @@ if kr7  == 'rechtdoor':
         zombie_hit_damage = (zombie_attack - player_defense)
         if zombie_hit_damage <= 0:
             print('Jij hebt een te goede verdedigign voor de zombie, hij kan je geen schade doen.')
+            k3_k8=int(input('welke kamer wil je naartoe kamer 3 of 8? 3 of 8 '))
         else:
             zombie_attack_amount = math.ceil(player_health / zombie_hit_damage)
             
@@ -83,6 +85,7 @@ if kr7  == 'rechtdoor':
                 print(f'In {player_attack_amount} rondes versla je de zombie.')
                 player_health1=player_health-zombie_hit_damage
                 print(f'Je health is nu {player_health1}.')
+                k3_k8=int(input('welke kamer wil je naartoe kamer 3 of 8? 3 of 8  '))
 
             else:
                 print('Helaas is de zombie te sterk voor je.')
@@ -90,63 +93,63 @@ if kr7  == 'rechtdoor':
                 exit()
         print('')
         time.sleep(3)
-    else:
-        print('je hebt kamer 2 gekozen ')
-else:
-    print('je gaat naar rechts')
+if  k3_k8 == 8:
 # === [kamer 8] === #
-print(' ')
-print('je komt een lannge kamer binnen  ')
-print('in het miden van de kamer staat een gokkast')
-print('')
-print("de gok kast werkt als volgt er worden 2 dobbelstenen gegooit mat allebij 6 zijden ")
-print('als de dobbelstenen in totaal hooger als 7 zijn dan verdubel jij je rubys ')
-print('aleen als ze laager zijn als 7 dan verlies jij 1 health ')
-print('als die gelijk is aan 7 dan krijg je 1 ruby en 4 health ')
-goken_1= input("wil je gokken ja of nee? ")
-goken_1.lower
-while goken_1 ==  "ja":
-    if  goken_1 == "ja":
-        getal_gokken1 =randint(0,6)
-        getal_gokken2 =randint(0,6) 
-        gokken= getal_gokken1+getal_gokken2
-        if  gokken > 7:
-            print(f'je hebt {gokken} gegooid en hebt je rubys verdubbeld')
-            ruby+=ruby
-            print(f'aantal rubbys  {ruby}')
-            print(' ')
-        elif  gokken < 7:
-            print(f'je hebt {gokken} gegooid  en hebt 1 health verloren')
-            player_health-=1
-            if player_health==0:
-                print('al je  health is verdwenen je bent af')
-                print('game over')
-                exit()
-            else:
-                print(f'je  health is nu {player_health}')
-                print(' ')
+        print(' ')
+        print('je komt een lannge kamer binnen  ')
+        print('in het miden van de kamer staat een gokkast')
+        print('')
+        print("de gok kast werkt als volgt er worden 2 dobbelstenen gegooit mat allebij 6 zijden ")
+        print('als de dobbelstenen in totaal hooger als 7 zijn dan verdubel jij je rubys ')
+        print('aleen als ze laager zijn als 7 dan verlies jij 1 health ')
+        print('als die gelijk is aan 7 dan krijg je 1 ruby en 4 health ')
+        goken_1= input("wil je gokken ja of nee? ")
+        goken_1.lower
+        while goken_1 ==  "ja":
+            if  goken_1 == "ja":
+                getal_gokken1 =randint(0,6)
+                getal_gokken2 =randint(0,6) 
+                gokken= getal_gokken1+getal_gokken2
+                if  gokken > 7:
+                    print(f'je hebt {gokken} gegooid en hebt je rubys verdubbeld')
+                    ruby+=ruby
+                    print(f'aantal rubbys  {ruby}')
+                    print(' ')
+                elif  gokken < 7:
+                    print(f'je hebt {gokken} gegooid  en hebt 1 health verloren')
+                    player_health-=1
+                    if player_health==0:
+                        print('al je  health is verdwenen je bent af')
+                        print('game over')
+                        exit()
+                    else:
+                        print(f'je  health is nu {player_health}')
+                        print(' ')
 
-        else:
-            print(f'je hebt {gokken} gegooid dus je krijgt  1 ruby en 4 health')
-            player_health+=4
-            ruby+=1
+                else:
+                    print(f'je hebt {gokken} gegooid dus je krijgt  1 ruby en 4 health')
+                    player_health+=4
+                    ruby+=1
+                    print(' ')
+                goken_1=input('wil je nog een keer gokken ja of nee ?  ')
+        time.sleep(3)
+        k3_k9=int(input( 'je hebt weer 2 opties wil je naar kamer 3 of wil je naar kamer 9    3 of 9'))
+        # === [kamer 9] === #
+        if k3_k9 == 9:
             print(' ')
-        goken_1=input('wil je nog een keer gokken ja of nee ?  ')
-time.sleep(3)
-# === [kamer 9] === #
+            print('je loopt de volgende kamer in maar deze kamer is vervloekt ')
+            print('je krijgt of 1 defense  of 2 health als je deze kamer inloopt ')
+            print(' ')
+            kr_9 =randint(1,2)
+            if kr_9  == 1:
+                player_defense +=1
+                print('je hebt 1 defense gekregen')
+            else:
+                player_health +=2
+                print("je hebt 2 health gekregen  ")
+                print(' ')
+                 # === [kamer 3] === #
 print(' ')
-print('je loopt de volgende kamer in maar deze kamer is vervloekt ')
-print('je krijgt of 1 defense  of 2 health als je deze kamer inloopt ')
-print(' ')
-kr_9 =randint(1,2)
-if kr_9  == 1:
-    player_defense +=1
-    print('je hebt 1 defense gekregen')
-else:
-    player_health +=2
-    print("je hebt 2 health gekregen  ")
-print(' ')
-# === [kamer 3] === #
 time.sleep(3)
 print('Je duwt de deur open en stap een hele lange kamer binnen.')
 print(f'In deze kamer staat een merchant met een schild een zwaard en een sleutel.')
