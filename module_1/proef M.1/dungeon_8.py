@@ -133,7 +133,7 @@ if  k3_k8 == 8:
                     print(' ')
                 goken_1=input('wil je nog een keer gokken ja of nee ?  ')
         time.sleep(3)
-        k3_k9=int(input( 'je hebt weer 2 opties wil je naar kamer 3 of wil je naar kamer 9    3 of 9'))
+        k3_k9=int(input( 'je hebt weer 2 opties wil je naar kamer 3 of wil je naar kamer 9    3 of 9  '))
         # === [kamer 9] === #
         if k3_k9 == 9:
             print(' ')
