@@ -4,10 +4,10 @@ from random import randint
 player_attack = 1
 player_defense = 0
 player_health = 3
-sleutel =0
+sleutelS=0
 ruby = 0
 operators = ["+","-","*"]
-
+item=0
 oparator = random.choice(operators)
 som_1  = randint(10, 25)
 som_2 = randint(-5,75)
@@ -27,13 +27,17 @@ print('')
 time.sleep(3)
 # === [kamer 7] === #
 print('je doet de deur open....')
-print('je vind een ruby op de grond van de kamer.')
-print("je neemt de ruby mee ")
-print(' ')
+ruby_j =randint(1,10)
+if ruby_j >1:
+    ruby+=1
+    print('je vind een ruby op de grond van de kamer.')
+    print("je neemt de ruby mee ")
+    print(' ')
+else:
+    print('')
 print ('je wilt de deur openmaken maar dan zie aan de rechterkant nog een deur ')
 kr7=input('welke deur wil je in rechtdoor of naar rechts?  ')
 kr7.lower
-ruby+=1
 if kr7  == 'rechtdoor':
 
     print(' ')
@@ -46,7 +50,7 @@ if kr7  == 'rechtdoor':
     antwoord = int(input('Wat toest je in? '))
 
     if antwoord == result:
-        print('Het stadbeeld laat de sleutel vallen en je pakt het op')
+        print('Het stadbeeld laat een ruby vallen en je pakt het op')
         ruby+=1
     else:
         print('Er gebeurt niets....')
@@ -79,6 +83,7 @@ if kr7  == 'rechtdoor':
                 print(f'In {player_attack_amount} rondes versla je de zombie.')
                 player_health1=player_health-zombie_hit_damage
                 print(f'Je health is nu {player_health1}.')
+                k3_k8=int(input('welke kamer wil je naartoe kamer 3 of 8? 3 of 8  '))
 
             else:
                 print('Helaas is de zombie te sterk voor je.')
@@ -86,91 +91,127 @@ if kr7  == 'rechtdoor':
                 exit()
         print('')
         time.sleep(3)
-    else:
-        print('je hebt kamer 2 gekozen ')
-else:
-    print('je gaat naar rechts')
-# === [kamer 8] === #
-print(' ')
-print('je komt een lannge kamer binnen  ')
-print('in het miden van de kamer staat een gokkast')
-print('')
-print("de gok kast werkt als volgt er worden 2 dobbelstenen gegooit mat allebij 6 zijden ")
-print('als de dobbelstenen in totaal hooger als 7 zijn dan verdubel jij je rubys ')
-print('aleen als ze laager zijn als 7 dan verlies jij 1 health ')
-print('als die gelijk is aan 7 dan krijg je 1 ruby en 4 health ')
-goken_1= input("wil je gokken ja of nee? ")
-goken_1.lower
-while goken_1 ==  "ja":
-    if  goken_1 == "ja":
-        getal_gokken1 =randint(0,6)
-        getal_gokken2 =randint(0,6) 
-        gokken= getal_gokken1+getal_gokken2
-        if  gokken > 7:
-            print(f'je hebt {gokken} gegooid en hebt je rubys verdubbeld')
-            ruby+=ruby
-            print(f'aantal rubbys  {ruby}')
+if kr7 is not "rechtdoor":
+    if k3_k8 >= 8:
+     # === [kamer 8] === #
+   
+        print(' ')
+        print('je komt een lannge kamer binnen  ')
+        print('in het miden van de kamer staat een gokkast')
+        print('')
+        print("de gok kast werkt als volgt er worden 2 dobbelstenen gegooit mat allebij 6 zijden ")
+        print('als de dobbelstenen in totaal hooger als 7 zijn dan verdubel jij je rubys ')
+        print('aleen als ze laager zijn als 7 dan verlies jij 1 health ')
+        print('als die gelijk is aan 7 dan krijg je 1 ruby en 4 health ')
+        goken_1= input("wil je gokken ja of nee? ")
+        goken_1.lower
+        while goken_1 ==  "ja":
+            if  goken_1 == "ja":
+                getal_gokken1 =randint(0,6)
+                getal_gokken2 =randint(0,6) 
+                gokken= getal_gokken1+getal_gokken2
+                if  gokken > 7:
+                    print(f'je hebt {gokken} gegooid en hebt je rubys verdubbeld')
+                    ruby+=ruby
+                    print(f'aantal rubbys  {ruby}')
+                    print(' ')
+                elif  gokken < 7:
+                    print(f'je hebt {gokken} gegooid  en hebt 1 health verloren')
+                    player_health-=1
+                    if player_health==0:
+                        print('al je  health is verdwenen je bent af')
+                        print('game over')
+                        exit()
+                    else:
+                        print(f'je  health is nu {player_health}')
+                        print(' ')
+
+                else:
+                    print(f'je hebt {gokken} gegooid dus je krijgt  1 ruby en 4 health')
+                    player_health+=4
+                    ruby+=1
+                    print(' ')
+                goken_1=input('wil je nog een keer gokken ja of nee ?  ')
+        time.sleep(3)
+        k3_k9=int(input( 'je hebt weer 2 opties wil je naar kamer 3 of wil je naar kamer 9    3 of 9'))
+        # === [kamer 9] === #
+        if k3_k9 == 9:
             print(' ')
-        elif  gokken < 7:
-            print(f'je hebt {gokken} gegooid  en hebt 1 health verloren')
-            player_health-=1
-            if player_health==0:
-                print('al je  health is verdwenen je bent af')
-                print('game over')
-                exit()
+            print('je loopt de volgende kamer in maar deze kamer is vervloekt ')
+            print('je krijgt of 1 defense  of 2 health als je deze kamer inloopt ')
+            print(' ')
+            kr_9 =randint(1,2)
+            if kr_9  == 1:
+                player_defense +=1
+                print('je hebt 1 defense gekregen')
             else:
-                print(f'je  health is nu {player_health}')
+                player_health +=2
+                print("je hebt 2 health gekregen  ")
                 print(' ')
-
-        else:
-            print(f'je hebt {gokken} gegooid dus je krijgt  1 ruby en 4 health')
-            player_health+=4
-            ruby+=1
-            print(' ')
-        goken_1=input('wil je nog een keer gokken ja of nee ?  ')
-# === [kamer 3] === #
-
+    # === [kamer 3] === #
+print(' ')
+time.sleep(3)
 print('Je duwt de deur open en stap een hele lange kamer binnen.')
 print(f'In deze kamer staat een merchant met een schild een zwaard en een sleutel.')
 
-items = [
-    {"name": "schild", "price": 1, "description": "Verhoogt je verdediging met 1"},
-    {"name": "zwaard", "price": 1, "description": "Verhoogt je aanval met 2"},
-    {"name": "sleutel", "price": 1, "description": "Een sleutel om de schatkist te openen"}
-]
-
-print("De merchant heeft de volgende items te koop:")
-for i, item in enumerate(items):
-    print(f"{i+1}. {item['name']} - {item['price']} rubys - {item['description']}")
-
+print('zwaard == 1 ruby')
+print('schild == 1 ruby')
+print('sleutel == 1 ruby')
+print(f'aantal  rubbys {ruby}')
+time.sleep(3)
+print(' ')
 if ruby >= 1:
-    while True:
-        choice = input("Welk item wil je kopen? (typ het nummer) of typ 'n' om niets te kopen: ")
-        if choice.lower() == 'n':
-            print("Je gaat verder zonder wat te kopen")
-            break
-        try:
-            choice = int(choice)
-            if choice < 1 or choice > len(items):
-                print("Ongeldige keuze, probeer opnieuw")
+    kopen_1=input('wil je iets kopen van de merchant  ja of nee ? ')
+    kopen_1.lower
+    if kopen_1 =='ja':
+        print(" ")
+        zwaard=input('wil je een zwaard kopen  ja of nee ? ')
+        zwaard.lower
+        if  zwaard == 'ja':
+            print('je hebt een zwaard gekocht')
+            player_attack+=2
+            print(f'je hebt nu {ruby} rubys')
+            item+=1
+            ruby-=1
+            print(' ')
+        else: 
+            print('je hebt geen zwaard gekocht')
+        if ruby>=1:
+            schild=input('wil je een schild kopen  ja of nee ? ')
+            schild.lower
+            if schild == 'ja':
+                print("je  hebt een schild gekocht")
+                player_defense+=2
+                print(f'je  hebt nu {ruby} rubys')
+                item+=1
+                ruby-=1
+                print(' ')
             else:
-                item = items[choice-1]
-                if ruby >= item['price']:
-                    ruby -= item['price']
-                    if item['name'] == 'schild':
-                        player_defense += 1
-                    elif item['name'] == 'zwaard':
-                        player_attack += 2
-                    elif item['name'] == 'sleutel':
-                        sleutel += 1
-                    print(f"Je hebt {item['name']} gekocht voor {item['price']} rubys")
-                    print(f"Je hebt nu {ruby} rubys over")
+                print('je hebt geen schild gekocht')
+            if ruby >=1:
+                sleutel=input('wil je een sleutel kopen  ja of nee ?')
+                sleutel.lower
+                if sleutel == 'ja':
+                    print('je hebt een sleutel gekocht')
+                    ruby-=1
+                    print(f'je hebt nu {ruby} rubys')
+                    sleutel=1
+                    item+=1  
+                    print(' ') 
                 else:
-                    print("Je hebt niet genoeg rubys om dit item te kopen")
-        except ValueError:
-            print("Ongeldige keuze, probeer opnieuw")
+                    print("je hebt geen sleutel gekocht")  
+            else:
+                print("je hebt geen rubys om iets te kopen")
+        else:
+            print('je hebt niet genog rubys voor nog iets ')
+    else:
+        print('je hebt niks gekocht ')
 else:
-    print("Je hebt niet genoeg rubys om iets te kopen")
+    print('je hebt niet genoeg rubys om iets te kopen ')
+if item >=2:
+    item= 'items'
+else:
+    item= 'item'
 # === [kamer 4] === #
 beast_attack = 2
 beast_defense = 0
