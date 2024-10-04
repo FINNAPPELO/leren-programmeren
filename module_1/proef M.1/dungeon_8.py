@@ -73,7 +73,6 @@ if kr7  == 'rechtdoor':
         zombie_hit_damage = (zombie_attack - player_defense)
         if zombie_hit_damage <= 0:
             print('Jij hebt een te goede verdedigign voor de zombie, hij kan je geen schade doen.')
-            k3_k8=int(input('welke kamer wil je naartoe kamer 3 of 8? 3 of 8 '))
         else:
             zombie_attack_amount = math.ceil(player_health / zombie_hit_damage)
             
@@ -85,12 +84,12 @@ if kr7  == 'rechtdoor':
                 print(f'In {player_attack_amount} rondes versla je de zombie.')
                 player_health1=player_health-zombie_hit_damage
                 print(f'Je health is nu {player_health1}.')
-                k3_k8=int(input('welke kamer wil je naartoe kamer 3 of 8? 3 of 8  '))
-
             else:
                 print('Helaas is de zombie te sterk voor je.')
                 print('Game over.')
                 exit()
+            k3_k8=int(input('welke kamer wil je naartoe kamer 3 of 8? 3 of 8  '))
+
         print('')
         time.sleep(3)
 if  k3_k8 == 8:
