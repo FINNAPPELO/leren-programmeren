@@ -10,3 +10,4 @@ def getal(nr1:int ,nr2:int )-> int :
             
 print(getal(7,7))
 print(getal(7,64))
+print(getal(64,7))
