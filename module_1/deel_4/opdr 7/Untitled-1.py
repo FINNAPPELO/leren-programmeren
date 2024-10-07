@@ -1,5 +1,5 @@
 from test_lib import test,report
-getal= 14.97
+getal= 14.98
 afronden_op=5
 
 afgerond=round(getal*100/afronden_op)*afronden_op/100

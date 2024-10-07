@@ -3,9 +3,9 @@ def generate_lists():
     alle_lijsten = []
     for i in range(A_lijsten):
         lengte = int(input(f"Hoelang moet lijst {i + 1} zijn? "))
-        stap = i + 1
-        start = i + 1
-        current_list = [start + stap * j for j in range(lengte)]
+        stap_groote = i + 1
+        start_waarde = i + 1
+        current_list = [start_waarde + stap_groote * rest_van for rest_van in range(lengte)]
         alle_lijsten.append(current_list)
 
     print(alle_lijsten)
