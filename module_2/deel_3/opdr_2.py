@@ -1,0 +1,9 @@
+start = 50
+totaal = 0
+plus_cijver = 0
+while totaal <= 1000:
+    totaal += start
+    plus_cijver += 1
+    num = [str(i) for i in range(50, start + 1)]
+    print(f"{plus_cijver}. {' + '.join(num)} = {totaal}")
+    start += 1

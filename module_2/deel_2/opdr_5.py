@@ -24,8 +24,8 @@ woort_vervangers = {
     "pen": "schrijfgereedschap"
 }
 ingaand = input("vul hier tekst in")
-worden = ingaand.split() #MAAKT VAN DE ZIN VAN ELK WOORT EEN LIST
-vertalde_woorden = [woort_vervangers.get(wort, wort) for wort in worden] #get haalt uit de list
-uitgaand = " ".join(vertalde_woorden) #maakt van de list weer een str
+worden = ingaand.split() 
+vertalde_woorden = [woort_vervangers.get(wort, wort) for wort in worden] #tijden het verwerken is wort elke keer het wort waarmee die werkt
+uitgaand = " ".join(vertalde_woorden) 
 print("omvormde text:")
 print(uitgaand)

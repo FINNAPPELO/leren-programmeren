@@ -9,7 +9,7 @@ for i in range(aantalinZak):
     kleur = random.choice(kleuren)
     if kleur in zak_Ms:
         zak_Ms[kleur] += 1
-    else:
-        zak_Ms[kleur] = 1
+   #else:
+    zak_Ms[kleur] = 1
 
 print(zak_Ms)
