@@ -1,24 +1,25 @@
 from RobotArm import RobotArm
-
-
 # Import the challenges (in this case challenges/example.py)
 from challenges.example import challenges
 
 # load the robotarm with a challenge on a level (max 3)
-robotArm = RobotArm(challenges[2],0)
-robotArm.moveRight()
+robotArm = RobotArm(challenges[4],0)
 robotArm.grab()
-robotArm.moveLeft()
+for i in range(9):
+    robotArm.moveRight()
 robotArm.drop()
-robotArm.moveRight()
-robotArm.moveRight()
+for i in range (5):
+    robotArm.moveLeft()
 robotArm.grab()
-robotArm.moveLeft()
+for i in range (5):
+    robotArm.moveRight()
 robotArm.drop()
+robotArm.moveLeft()
 robotArm.moveLeft()
 robotArm.grab()
 robotArm.moveRight()
 robotArm.moveRight()
 robotArm.drop()
 
-robotArm.report
+
+robotArm.report()
