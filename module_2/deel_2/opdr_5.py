@@ -25,7 +25,7 @@ woort_vervangers = {
 }
 ingaand = input("vul hier tekst in")
 worden = ingaand.split() 
-vertalde_woorden = [woort_vervangers.get(wort, wort) for wort in worden] #tijden het verwerken is wort elke keer het wort waarmee die werkt
+vertalde_woorden = [woort_vervangers.get(wort, wort) for wort in worden] 
 uitgaand = " ".join(vertalde_woorden) 
 print("omvormde text:")
 print(uitgaand)
