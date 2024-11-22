@@ -239,7 +239,7 @@ class RobotArm:
     self._yardBottom = self._armTopHeight + (self._maxLayers + 1) * self._boxSpaceHeight() + self._penWidth
     self._armHeight = self._armTopHeight
     self._armX = 0
-    self.speed = 2
+    self.speed = 4
     self._yard = []
     
     self._setScreen()

@@ -3,7 +3,7 @@ from challenges.medium import challenges
 robotArm = RobotArm(challenges[3],0)
 for i in range(8):
     robotArm.moveRight()
-for i in range (8):
+for i in range (9):
     robotArm.grab()
     kleur=robotArm.scan()
     if kleur == "white":
