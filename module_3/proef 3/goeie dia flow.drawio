@@ -1,0 +1,142 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="25.0.3">
+  <diagram name="Page-1" id="rYxEettKcMtcY_Kqbu2b">
+    <mxGraphModel dx="1500" dy="796" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="-7SVQR58gKVooOpS2dzf-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="-7SVQR58gKVooOpS2dzf-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="414" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-7SVQR58gKVooOpS2dzf-1" value="start" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="354" y="20" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-7SVQR58gKVooOpS2dzf-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="414" y="190" as="sourcePoint" />
+            <mxPoint x="414" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-7SVQR58gKVooOpS2dzf-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="474" y="270" as="sourcePoint" />
+            <mxPoint x="520" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-7SVQR58gKVooOpS2dzf-40" value="nee" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="-7SVQR58gKVooOpS2dzf-27" vertex="1" connectable="0">
+          <mxGeometry x="-0.6894" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-7SVQR58gKVooOpS2dzf-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" target="-7SVQR58gKVooOpS2dzf-5" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="414" y="300" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-7SVQR58gKVooOpS2dzf-41" value="ja" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="-7SVQR58gKVooOpS2dzf-28" vertex="1" connectable="0">
+          <mxGeometry x="-0.161" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-7SVQR58gKVooOpS2dzf-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="-7SVQR58gKVooOpS2dzf-5" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="414" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-7SVQR58gKVooOpS2dzf-5" value="Voeg naam toe aan lijst" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="250" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-7SVQR58gKVooOpS2dzf-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="580" y="390" as="sourcePoint" />
+            <mxPoint x="474" y="160" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="620" y="390" />
+              <mxPoint x="620" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-7SVQR58gKVooOpS2dzf-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="354" y="490" as="sourcePoint" />
+            <mxPoint x="310" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-7SVQR58gKVooOpS2dzf-24" value="ja" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="-7SVQR58gKVooOpS2dzf-22" vertex="1" connectable="0">
+          <mxGeometry x="-0.0304" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-7SVQR58gKVooOpS2dzf-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="-7SVQR58gKVooOpS2dzf-9" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="620" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-7SVQR58gKVooOpS2dzf-9" value="Vraag om meer namen&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="474" y="600" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-7SVQR58gKVooOpS2dzf-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="-7SVQR58gKVooOpS2dzf-11" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="839.5799999999999" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-7SVQR58gKVooOpS2dzf-11" value="&amp;nbsp;Willekeurige lootjes trekken &amp;nbsp;(controleer geen eigen naam)&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="250" y="709.5799999999999" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-7SVQR58gKVooOpS2dzf-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" target="-7SVQR58gKVooOpS2dzf-14" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="899.5799999999999" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-7SVQR58gKVooOpS2dzf-14" value="end" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
+          <mxGeometry x="354" y="949.5799999999999" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-7SVQR58gKVooOpS2dzf-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.55;entryY=0.167;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="-7SVQR58gKVooOpS2dzf-9" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="414" y="520" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-7SVQR58gKVooOpS2dzf-25" value="nee" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="-7SVQR58gKVooOpS2dzf-23" vertex="1" connectable="0">
+          <mxGeometry x="0.1925" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-7SVQR58gKVooOpS2dzf-34" value="&amp;nbsp;Vraag naar naam(s)(invoer van deelnemer)" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="360" y="130" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-7SVQR58gKVooOpS2dzf-42" value="&amp;nbsp;Vraag om nieuwe naam&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="460" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-7SVQR58gKVooOpS2dzf-43" value="&amp;nbsp;Print lootjes en bijbehorende&lt;div&gt;&amp;nbsp;deelnemers&amp;nbsp; &amp;nbsp;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="250" y="839.5799999999999" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-7SVQR58gKVooOpS2dzf-44" value="&amp;nbsp;Aantal deelnemers&amp;nbsp;&lt;span class=&quot;hljs-operator&quot;&gt;&amp;gt;=&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;hljs-number&quot;&gt;3&lt;/span&gt;?&amp;nbsp;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="350" y="450" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="en1Vp3m3VE9MAdQKI334-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-7SVQR58gKVooOpS2dzf-45" target="-7SVQR58gKVooOpS2dzf-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="en1Vp3m3VE9MAdQKI334-2" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="en1Vp3m3VE9MAdQKI334-1">
+          <mxGeometry x="-0.241" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="en1Vp3m3VE9MAdQKI334-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-7SVQR58gKVooOpS2dzf-45" target="-7SVQR58gKVooOpS2dzf-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="en1Vp3m3VE9MAdQKI334-7" value="2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="en1Vp3m3VE9MAdQKI334-6">
+          <mxGeometry x="-0.194" y="1" relative="1" as="geometry">
+            <mxPoint y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-7SVQR58gKVooOpS2dzf-45" value="Kies optie:&lt;br&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot; class=&quot;hljs-number&quot;&gt;1.&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;Meer namen&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot; class=&quot;hljs-number&quot;&gt;2.&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;Lootjes trekken&lt;/span&gt;&amp;nbsp;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="245" y="590" width="130" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="-7SVQR58gKVooOpS2dzf-47" value="&lt;span class=&quot;hljs-keyword&quot;&gt;Is&lt;/span&gt;&amp;nbsp;de naam uniek?&amp;nbsp;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
+          <mxGeometry x="330" y="240" width="160" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
