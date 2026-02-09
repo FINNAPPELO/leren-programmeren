@@ -1,0 +1,54 @@
+Analyse van ROOMORDER in play.py en verbeteringen
+
+Huidige ROOMORDER: ('1', '7', '4', '5', '9', '3', '6', '8', '2', '10')
+
+Probleem: De ROOMORDER lijkt correct, maar de voorwaarden in play.py voor het uitvoeren van kamers kloppen niet volledig. Hierdoor werken sommige paden niet goed, vooral voor veilige ontsnapping.
+
+Geanalyseerde succesvolle pogingen (uit attempts/succesfull/):
+- unsafe_route_1_7_4_2.json: Route 1->7->4->2, eindigt met dood in kamer 2 (onveilig).
+- unsafe_route_1_7_5_9_2.json: Route 1->7->5->9->2, eindigt met dood in kamer 2 (onveilig).
+
+Beide zijn onveilig omdat de speler sterft in kamer 2 door de draak (lawaaierigheid > 0, geen zwaard of schild).
+
+Om een veilige route te vinden, moet de speler:
+- Geen lawaaierigheid hebben (vermijd kamer 7 'b' en kamer 9 'a').
+- Zwaard of schild krijgen.
+- Kristal vermijden (want dat veroorzaakt dood in kamer 2).
+- De juiste deurcode invoeren in kamer 10.
+
+Mogelijke veilige route:
+- Kies in kamer 1: 'b' (gang rechts).
+- Kies in kamer 7: 'a' (gang links, geen lawaaierigheid).
+- Kies in kamer 5: 'b' (door gat).
+- Kies in kamer 9: 'a' (hendel omhoog, naar boven).
+- Kies in kamer 3: 'b' (verder, neem zwaard).
+- Kies in kamer 6: 'b' (hek open).
+- Kies in kamer 8: 'a' (drink niet).
+- In kamer 2: Sleutel nemen (draak slaapt, geen lawaaierigheid).
+- In kamer 10: Voer de routecode in (1 7 5 9 3 6 8 2).
+
+Dit geeft route: 1,7,5,9,3,6,8,2,10 en ontsnapping.
+
+Bugs in play.py voorwaarden:
+1. Voor uitvoeren kamer 6 (index 6): Ontbreekt check voor kamer 3 'b'. Voeg toe: or story.checkAnswerByOrder(5, 'b')
+2. Voor uitvoeren kamer 2 (index 8): Ontbreekt check voor kamer 8 'a'. Voeg toe: or story.checkAnswerByOrder(7, 'a')
+
+Verbeterde voorwaarden in play.py:
+- if story.checkAnswerByOrder(2, 'b') or story.checkAnswerByOrder(3, 'a') or story.checkAnswerByOrder(5, 'b'):
+    story.executeByOrder(6)
+
+- if story.checkAnswerByOrder(2, 'a') or story.checkAnswerByOrder(4, 'b') or story.checkAnswerByOrder(6, 'a') or story.checkAnswerByOrder(7, 'a') or story.checkAnswerByOrder(7, 'b'):
+    story.executeByOrder(8)
+
+Na deze fixes werkt de ROOMORDER correct voor veilige en onveilige paden.
+
+Alle mogelijke paden (met a/b keuzes) en resultaten:
+- Pad 1: 1'b' -> 7'b' -> 4'a' -> 2 (dood, onveilig).
+- Pad 2: 1'b' -> 7'b' -> 4'b' -> 6'b' -> 8'b' -> 2 (mogelijk dood afhankelijk van items).
+- Pad 3: 1'b' -> 7'a' -> 5'b' -> 9'b' -> 2 (dood, onveilig).
+- Pad 4: 1'b' -> 7'a' -> 5'b' -> 9'a' -> 3'b' -> 6'b' -> 8'a' -> 2 -> 10 (ontsnapping, veilig als code correct ingevoerd).
+- Pad 5: 1'a' -> 2 (mogelijk dood).
+
+Niet alle combinaties leiden tot kamer 10; sommige eindigen eerder met dood of verloren.
+
+Conclusie: ROOMORDER is correct, maar voorwaarden in play.py moeten worden aangepast voor juiste flow.

@@ -5,7 +5,9 @@ from data import JOURNEY_IN_DAYS
 from data import COST_FOOD_HORSE_COPPER_PER_DAY
 from data import COST_FOOD_HUMAN_COPPER_PER_DAY
 from data import COST_TENT_GOLD_PER_WEEK
-from data import COST_HORSE_SILVER_PER_DAY 
+from data import COST_HORSE_SILVER_PER_DAY
+from data import COST_INN_HUMAN_SILVER_PER_NIGHT
+from data import COST_INN_HORSE_COPPER_PER_NIGHT
 
 ##################### O03 #####################
 
@@ -125,42 +127,100 @@ def getItemsValueInGold(items: list) -> float:
     return float(totaal_goud)
 
 ##################### O09 #####################
-
-def getCashInGoldFromPeople(people:list) -> float:
-    pass
+def getCashInGoldFromPeople(people: list) -> float:
+    totaal_goud = 0.0
+    for persoon in people:
+        totaal_goud += getPersonCashInGold(persoon["cash"])
+    return round(totaal_goud, 2)
 
 ##################### O10 #####################
 
-def getInterestingInvestors(investors:list) -> list:
-    pass
+def getInterestingInvestors(investors: list) -> list:
+    resultaat = []
+    for inv in investors:
+        if "profitReturn" in inv and inv["profitReturn"] <= 10: # Neem alleen die investeerders mee waarbij de waarde van profitReturn kleiner of gelijk is aan 10.
+            resultaat.append(inv)
+    return resultaat
 
-def getAdventuringInvestors(investors:list) -> list:
-    pass
 
-def getTotalInvestorsCosts(investors:list, gear:list) -> float:
-    pass
+
+def getAdventuringInvestors(investors: list) -> list:
+    """
+    Geeft alle investeerders terug die interessant zijn en mee op avontuur gaan.
+    """
+    return [
+        inv for inv in getInterestingInvestors(investors)
+        if inv.get("adventuring", False)
+    ]
+
+
+def getTotalInvestorsCosts(investors: list, gear: list) -> float:
+    """
+    Bereken de totale kosten van alle avontuurlijke investeerders:
+    - eten: 1 mens + 1 paard
+    - huur: 1 tent + 1 paard
+    - gear: items
+
+    Retourneer 0.0 als er geen avontuurlijke investeerders zijn of gear lijst leeg is.
+    """
+    adventurers = getAdventuringInvestors(investors)
+
+    if not adventurers or not gear:
+        return 0.0
+
+    cost_per_adventurer = (
+        getJourneyFoodCostsInGold(1, 1) +
+        getTotalRentalCost(1, 1) +
+        getItemsValueInGold(gear)
+    )
+
+    total_cost = cost_per_adventurer * len(adventurers)
+
+    return round(total_cost, 2)
+
 
 ##################### O11 #####################
 
 def getMaxAmountOfNightsInInn(leftoverGold:float, people:int, horses:int) -> int:
-    pass
+    max_nights = 0
+    while True:
+        cost = getJourneyInnCostsInGold(max_nights + 1, people, horses)
+        if cost > leftoverGold:
+            break
+
+
+        max_nights += 1
+    return max_nights
 
 def getJourneyInnCostsInGold(nightsInInn:int, people:int, horses:int) -> float:
-    pass
+    total_silver = nightsInInn * people * COST_INN_HUMAN_SILVER_PER_NIGHT
+    total_copper = nightsInInn * horses * COST_INN_HORSE_COPPER_PER_NIGHT
+    total_gold = silver2gold(total_silver) + copper2gold(total_copper)
+    return round(total_gold, 2)
 
 ##################### O13 #####################
 
 def getInvestorsCuts(profitGold:float, investors:list) -> list:
-    pass
+    cuts = []
+    if not investors:
+        return cuts
+    for inv in investors:
+        if inv.get("profitReturn", 100) <= 10:
+            cut = profitGold * (inv["profitReturn"] / 100)
+            cuts.append(math.floor(cut * 100) / 100)
+    return cuts
 
 def getAdventurerCut(profitGold:float, investorsCuts:list, fellowship:int) -> float:
-    pass
-
-##################### O14 #####################
-
-def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:list) -> list:
-    pass
-
+    if fellowship <= 0:
+        return 0.0
+    total_investors_cut = sum(investorsCuts) if investorsCuts else 0.0
+    remaining = profitGold - total_investors_cut
+    if remaining <= 0:
+        return 0.0
+    if fellowship == 0:
+        return 0.0
+    cut_per_adventurer = remaining / fellowship
+    return round(cut_per_adventurer, 2)
 ##################### view functions #####################
 
 def print_colorvars(txt:str='{}', vars:list=[], color:str='yellow') -> None:
